@@ -2,6 +2,9 @@ name: 'Test Terraform with GitHub Actions CI'
 
 on: push
 
+env:
+  TF_LOG: "trace"
+
 jobs:
   terraform:
     name: 'Terraform'
