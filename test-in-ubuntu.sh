@@ -3,7 +3,7 @@
 # Start Docker container with the following command:
 #   docker run -it -v "`pwd`:/src" -w "/src" ubuntu:latest
 # Then execute this script to install both dotnet 5 and terraform
-
+echo "whoami=`whoami`"
 if [ `whoami` -ne "root" ]
 then
   echo "Needs to run as root."
