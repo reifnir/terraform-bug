@@ -1,0 +1,28 @@
+name: 'Test Terraform with GitHub Actions CI'
+
+on: push
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    environment: production
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Install pre-reqs
+      run: ./test-in-ubuntu.sh
+
+    - name: Terraform init
+      run: terraform init
+
+    - name: Terraform apply
+      run: terraform apply -auto-approve
