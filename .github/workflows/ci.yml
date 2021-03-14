@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install pre-reqs
-      run: ./test-in-ubuntu.sh
+      run: sudo ./test-in-ubuntu.sh
 
     - name: Terraform init
       run: terraform init
