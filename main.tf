@@ -10,6 +10,6 @@ resource "null_resource" "package_build" {
 
   provisioner "local-exec" {
     interpreter = ["/bin/bash", "-c"]
-    command     = "dotnet build \"${path.root}/dotnet-project\""
+    command     = "(cd \"${path.root}/dotnet-project\" && dotnet clean && dotnet build)"
   }
 }
